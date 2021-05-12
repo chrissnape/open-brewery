@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { borderColour, borderWidth, primaryColour, padding, fontSize } from '../../utils/styles';
+import { borderColour, borderWidth, primaryColour, padding, fontSize, secondaryColour } from '../../utils/styles';
 
 export default StyleSheet.create({
   card: {
@@ -10,6 +10,10 @@ export default StyleSheet.create({
     flexDirection: 'row',
     padding,
     width: '100%',
+  },
+  cardIsFavourite: {
+    backgroundColor: '#defaff',
+    borderColor: '#70cfe0',
   },
   icon: {
     color: primaryColour,
