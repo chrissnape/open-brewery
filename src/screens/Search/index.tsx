@@ -12,9 +12,7 @@ type Props = {
   breweriesGetFailure: boolean,
   favouriteBreweries: Array<number>;
   getBreweries: (city?: string) => void;
-
   navigation: any,
-
   queryCity: string | null,
   selectBrewery: (id: number) => void;
 }

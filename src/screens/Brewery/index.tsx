@@ -13,7 +13,7 @@ type Props = {
 }
 
 const BreweryScreen: FC <Props> = ({ addToFavourites, favouriteBreweries, selectedBrewery }): JSX.Element => {
-  const [isOpen, setIsOpen] = useState<Boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   if (!selectedBrewery) {
     return <Text>Unable to find brewery</Text>
   }

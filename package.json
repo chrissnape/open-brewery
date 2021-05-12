@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./src --ext .ts,.tsx,.js,.jsx,.json"
   },
   "jest": {
     "preset": "jest-expo"
@@ -33,6 +34,9 @@
     "@babel/core": "^7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "eslint": "^7.26.0",
     "i": "^0.3.6",
     "jest-expo": "^41.0.0",
     "npm": "^7.12.1",
