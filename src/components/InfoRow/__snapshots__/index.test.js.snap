@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfoRow /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#065535",
+        "flex": 1,
+        "fontSize": 16,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Lorem
+  </Text>
+  <Text
+    accessible={true}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "flex": 2,
+        "fontSize": 16,
+      }
+    }
+  >
+    Ipsum
+  </Text>
+</View>
+`;

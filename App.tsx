@@ -1,21 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { ComponentType } from 'react';
+import { Provider } from 'react-redux';
+import { NavigationContainer, TypedNavigator, ParamListBase, NavigationState, EventMapBase } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Brewery, Search } from './src/containers';
+import store from './src/store';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import { BREWERY, SEARCH_BREWERIES } from './src/utils/constants';
+import { primaryColour } from './src/utils/styles';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Stack: TypedNavigator<ParamListBase, NavigationState, {}, EventMapBase, ComponentType> = createStackNavigator();
+
+export default (): JSX.Element => (
+  <Provider store={store}>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: primaryColour,
+          },
+          headerTintColor: '#fff',
+        }}
+      >
+        <Stack.Screen name={SEARCH_BREWERIES} component={Search} />
+        <Stack.Screen name={BREWERY} component={Brewery} options={({ route }) => ({ title: route.params.name })}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  </Provider>
+);

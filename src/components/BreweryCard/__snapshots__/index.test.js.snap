@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BreweryCard /> renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "borderColor": "#ccc",
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "padding": 10,
+      "width": "100%",
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "color": "#065535",
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "marginBottom": 5,
+        }
+      }
+    >
+      Lorem ipsum
+    </Text>
+    <Text>
+      Los Angeles, California
+    </Text>
+  </View>
+  <Text />
+</View>
+`;
