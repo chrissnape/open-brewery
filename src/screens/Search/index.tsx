@@ -19,12 +19,17 @@ type Props = {
 
 const SearchScreen: FC <Props> = ({ breweries, breweriesGetSuccess, breweriesGetFailure, favouriteBreweries, getBreweries, navigation, queryCity, selectBrewery }): JSX.Element => {
   const [queryString, setQueryString] = useState<string>('');
+  const [isGetBreweries, setIsGetBreweries] = useState<boolean>(false);
   useEffect(() => {
-    getBreweries();
-  }, []);
-  const renderContent = () => {
+    if (isGetBreweries === false) {
+      getBreweries();
+      setIsGetBreweries(true);
+    }
+  }, [isGetBreweries, getBreweries, setIsGetBreweries]);
+  const renderContent = (): JSX.Element => {
     if (breweriesGetSuccess) {
-      return (
+      return (breweries.length > 0)
+      ?  (
         <Fragment>
           {breweries.map((brewery: Brewery) => {
             const { id, city, name, state } = brewery;
@@ -44,6 +49,9 @@ const SearchScreen: FC <Props> = ({ breweries, breweriesGetSuccess, breweriesGet
             );
           })}
         </Fragment>
+      )
+      : (
+        <Text>No breweries found</Text>
       );
     }
     if (breweriesGetFailure) {
