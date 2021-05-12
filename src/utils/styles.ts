@@ -1,7 +1,7 @@
-export const borderColour: string = '#ccc';
-export const borderRadius: number = 10;
-export const borderWidth: number = 1;
-export const fontSize: number = 16;
-export const padding: number = 10;
-export const primaryColour: string = '#065535';
-export const secondaryColour: string = '#e34f83';
+export const borderColour = '#ccc';
+export const borderRadius = 10;
+export const borderWidth = 1;
+export const fontSize = 16;
+export const padding = 10;
+export const primaryColour = '#065535';
+export const secondaryColour = '#e34f83';

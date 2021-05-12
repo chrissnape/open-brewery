@@ -28,7 +28,7 @@ const initialState: State = {
   queryCity: null,
 }
 
-const getBreweryById: Function = (breweries: Array<Brewery>, id: number) => {
+const getBreweryById = (breweries: Array<Brewery>, id: number) => {
   const foundBrewery: Brewery | undefined = breweries.find((brewery: Brewery) => brewery.id === id);
   return foundBrewery || null;
 }

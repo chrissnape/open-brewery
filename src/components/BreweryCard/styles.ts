@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { borderColour, borderWidth, primaryColour, padding, fontSize, secondaryColour } from '../../utils/styles';
+import { borderColour, borderWidth, primaryColour, padding, fontSize } from '../../utils/styles';
 
 export default StyleSheet.create({
   card: {
