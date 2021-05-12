@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBox /> renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    blurOnSubmit={true}
+    onChangeText={[Function]}
+    onSubmitEditing={[Function]}
+    placeholder="Search city..."
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "#ccc",
+        "borderWidth": 1,
+        "flex": 1,
+        "fontSize": 18,
+        "marginRight": 10,
+        "padding": 10,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value="Boulder"
+  />
+  <Text />
+</View>
+`;

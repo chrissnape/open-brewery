@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> renders correctly 1`] = `
+Array [
+  <View
+    style={
+      Object {
+        "padding": 10,
+        "paddingBottom": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        blurOnSubmit={true}
+        onChangeText={[Function]}
+        onSubmitEditing={[Function]}
+        placeholder="Search city..."
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "#ccc",
+            "borderWidth": 1,
+            "flex": 1,
+            "fontSize": 18,
+            "marginRight": 10,
+            "padding": 10,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <Text />
+    </View>
+  </View>,
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flexDirection": "row",
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#065535",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "marginRight": 10,
+        }
+      }
+    >
+      All
+    </Text>
+  </View>,
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "padding": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderColor": "#ccc",
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "padding": 10,
+                "width": "100%",
+              }
+            }
+          >
+            <View>
+              <Text
+                style={
+                  Object {
+                    "color": "#065535",
+                    "fontSize": 20,
+                    "fontWeight": "bold",
+                    "marginBottom": 5,
+                  }
+                }
+              >
+                10 Barrel Brewing Co
+              </Text>
+              <Text>
+                San Diego, California
+              </Text>
+            </View>
+            <Text />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderColor": "#ccc",
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "padding": 10,
+                "width": "100%",
+              }
+            }
+          >
+            <View>
+              <Text
+                style={
+                  Object {
+                    "color": "#065535",
+                    "fontSize": 20,
+                    "fontWeight": "bold",
+                    "marginBottom": 5,
+                  }
+                }
+              >
+                2Kids Brewing Company
+              </Text>
+              <Text>
+                San Diego, California
+              </Text>
+            </View>
+            <Text />
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>,
+]
+`;

@@ -1,6 +1,6 @@
-import React, { ComponentType } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
-import { NavigationContainer, TypedNavigator, ParamListBase, NavigationState, EventMapBase } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Brewery, Search } from './src/containers';
 import store from './src/store';
@@ -8,7 +8,7 @@ import store from './src/store';
 import { BREWERY, SEARCH_BREWERIES } from './src/utils/constants';
 import { primaryColour } from './src/utils/styles';
 
-const Stack: TypedNavigator<ParamListBase, NavigationState, {}, EventMapBase, ComponentType> = createStackNavigator();
+const Stack = createStackNavigator();
 
 export default (): JSX.Element => (
   <Provider store={store}>

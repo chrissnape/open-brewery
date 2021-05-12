@@ -11,6 +11,10 @@ export default StyleSheet.create({
     padding,
     width: '100%',
   },
+  cardIsFavourite: {
+    backgroundColor: '#defaff',
+    borderColor: '#70cfe0',
+  },
   icon: {
     color: primaryColour,
     fontSize: 50,

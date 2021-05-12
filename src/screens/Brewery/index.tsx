@@ -7,39 +7,50 @@ import { Brewery } from '../../utils/types';
 import styles from './styles';
 
 type Props = {
+  addToFavourites: (id: number) => void;
+  favouriteBreweries: Array<number>;
   selectedBrewery: Brewery | null;
 }
 
-const BreweryScreen: FC <Props> = ({ selectedBrewery }): JSX.Element => {
-  const [isOpen, setIsOpen] = useState<Boolean>(false);
+const BreweryScreen: FC <Props> = ({ addToFavourites, favouriteBreweries, selectedBrewery }): JSX.Element => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   if (!selectedBrewery) {
     return <Text>Unable to find brewery</Text>
   }
-  const { city, county_province, phone, postal_code, state, website_url } = selectedBrewery;
+  const { id, brewery_type, city, county_province, phone, postal_code, state,website_url } = selectedBrewery;
+  const isFavourite = favouriteBreweries.includes(id);
   const showLabel  = isOpen ? 'Hide information' : 'Show more information';
   return (
     <Fragment>
       <StatusBar style="light" />
       <ScrollView>
         <View style={styles.container}>
-          <InfoRow
-            keyLabel="City"
-            label={city}
-          />
-          <InfoRow
-            keyLabel="State"
-            label={state}
-          />
-          {county_province && (
+          <View style={styles.infoRowWrapper}>
             <InfoRow
-              keyLabel="County"
-              label={county_province}
+              keyLabel="City"
+              label={city}
             />
+          </View>
+          <View style={styles.infoRowWrapper}>
+            <InfoRow
+              keyLabel="State"
+              label={state}
+            />
+          </View>
+          {county_province && (
+            <View style={styles.infoRowWrapper}>
+              <InfoRow
+                keyLabel="County"
+                label={county_province}
+              />
+            </View>
           )}
-          <InfoRow
-            keyLabel="Postal Code"
-            label={postal_code}
-          />
+          <View style={styles.infoRowWrapper}>
+            <InfoRow
+              keyLabel="Postal Code"
+              label={postal_code}
+            />
+          </View>
           {(phone || website_url) && (
             <Fragment>
               <TouchableWithoutFeedback onPress={() => setIsOpen(!isOpen)}>
@@ -47,18 +58,28 @@ const BreweryScreen: FC <Props> = ({ selectedBrewery }): JSX.Element => {
               </TouchableWithoutFeedback>
               {isOpen && (
                 <Fragment>
-                  {phone && (
+                  <View style={styles.infoRowWrapper}>
                     <InfoRow
-                      keyLabel="Phone Number"
-                      label={phone}
+                      keyLabel="Brewery Type"
+                      label={brewery_type}
                     />
+                  </View>
+                  {phone && (
+                    <View style={styles.infoRowWrapper}>
+                      <InfoRow
+                        keyLabel="Phone Number"
+                        label={phone}
+                      />
+                    </View>
                   )}
                   {website_url && (
-                    <InfoRow
-                      keyLabel="Website URL"
-                      label={website_url}
-                      onPress={() => WebBrowser.openBrowserAsync(website_url)}
-                    />
+                    <View style={styles.infoRowWrapper}>
+                      <InfoRow
+                        keyLabel="Website URL"
+                        label={website_url}
+                        onPress={() => WebBrowser.openBrowserAsync(website_url)}
+                      />
+                    </View>
                   )}
                 </Fragment>
               )}
@@ -66,6 +87,9 @@ const BreweryScreen: FC <Props> = ({ selectedBrewery }): JSX.Element => {
           )}
         </View>
       </ScrollView>
+      <View style={styles.buttonWrapper}>
+        <Button label={isFavourite ? 'Remove from favourites' : 'Add to favourites'} onPress={() => addToFavourites(id)} primary={!isFavourite} />
+      </View>
     </Fragment>
   );
 }

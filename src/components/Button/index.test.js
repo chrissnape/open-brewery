@@ -4,7 +4,7 @@ import Button from './index';
 
 const props = {
   label: 'View more',
-  onPress: () => {}
+  onPress: () => {},
 }
 
 describe('<Button />', () => {
