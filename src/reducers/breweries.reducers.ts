@@ -1,5 +1,6 @@
 import { AnyAction, Reducer } from 'redux';
 import {
+  BREWERIES_FAVOURITE_BREWERY,
   BREWERIES_GET_REQUEST,
   BREWERIES_GET_SUCCESS,
   BREWERIES_GET_FAILURE,
@@ -12,7 +13,9 @@ type State = {
   breweriesGetRequest: boolean;
   breweriesGetSuccess: boolean;
   breweriesGetFailure: boolean;
+  favouriteBreweries: Array<number>;
   selectedBrewery: Brewery | null;
+  queryCity: string | null,
 }
 
 const initialState: State = {
@@ -20,17 +23,33 @@ const initialState: State = {
   breweriesGetRequest: false,
   breweriesGetSuccess: false,
   breweriesGetFailure: false,
+  favouriteBreweries: [],
   selectedBrewery: null,
+  queryCity: null,
+}
+
+const getBreweryById: Function = (breweries: Array<Brewery>, id: number) => {
+  const foundBrewery: Brewery | undefined = breweries.find((brewery: Brewery) => brewery.id === id);
+  return foundBrewery || null;
 }
 
 const breweryReducer: Reducer<State, AnyAction> = (state: State = initialState, action: AnyAction): State => {
   switch (action.type) {
+    case BREWERIES_FAVOURITE_BREWERY:
+      return {
+        ...state,
+        favouriteBreweries: state.favouriteBreweries.includes(action.params.id)
+          ? state.favouriteBreweries.filter((id: number) => id !== action.params.id)
+          : [...state.favouriteBreweries, action.params.id],
+      }
+    
     case BREWERIES_GET_REQUEST:
       return {
         ...state,
         breweriesGetRequest: true,
         breweriesGetSuccess: false,
         breweriesGetFailure: false,
+        queryCity: action.params.queryCity,
       }
 
     case BREWERIES_GET_SUCCESS:
@@ -49,10 +68,9 @@ const breweryReducer: Reducer<State, AnyAction> = (state: State = initialState, 
       }
 
     case BREWERIES_SELECT_BREWERY:
-      const foundBrewery: Brewery | undefined = state.breweries.find((brewery: Brewery) => brewery.id === action.params.id);
       return {
         ...state,
-        selectedBrewery: foundBrewery || null,
+        selectedBrewery: getBreweryById(state.breweries, action.params.id),
       }
 
     default:

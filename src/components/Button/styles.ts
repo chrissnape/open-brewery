@@ -3,14 +3,20 @@ import { borderRadius, primaryColour, padding, fontSize } from '../../utils/styl
 
 export default StyleSheet.create({
   button: {
-    backgroundColor: primaryColour,
+    backgroundColor: '#CCC',
     borderRadius,
     padding,
   },
+  buttonIsPrimary: {
+    backgroundColor: primaryColour,
+  },
   label: {
-    color: '#fff',
+    color: '#666',
     fontSize,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  labelIsPrimary: {
+    color: '#fff',
   },
 });

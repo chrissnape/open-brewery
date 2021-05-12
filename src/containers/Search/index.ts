@@ -13,7 +13,7 @@ const mapStateToProps = (state: AppState) => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getBreweries: () => getBreweriesAction(dispatch),
+  getBreweries: (city?: string) => getBreweriesAction(dispatch, city),
   selectBrewery: (id: number) => selectBreweryAction(dispatch, id),
 });
 

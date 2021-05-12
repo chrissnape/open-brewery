@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import {
-  getBreweries as getBreweriesAction,
+  addToFavourites as addToFavouritesAction,
 } from '../../actions';
 import { Brewery } from '../../screens';
 import { AppState } from '../../store';
@@ -12,7 +12,7 @@ const mapStateToProps = (state: AppState) => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getBreweries: () => getBreweriesAction(dispatch),
+  addToFavourites: (id: number) => addToFavouritesAction(dispatch, id),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Brewery);

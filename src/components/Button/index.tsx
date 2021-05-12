@@ -5,14 +5,19 @@ import styles from './styles';
 type Props = {
   label: string;
   onPress: () => void;
+  primary?: boolean,
 }
 
-const BreweryCardComponent: FC <Props> = ({ label, onPress }): JSX.Element => (
-  <TouchableWithoutFeedback onPress={onPress}>
-    <View style={styles.button}>
-      <Text style={styles.label}>{label}</Text>
-    </View>
-  </TouchableWithoutFeedback>
-);
+const ButtonComponent: FC <Props> = ({ label, onPress, primary = false }): JSX.Element => {
+  const buttonStyle = (primary) ? {...styles.button, ...styles.buttonIsPrimary} : styles.button;
+  const labelStyle = (primary) ? {...styles.label, ...styles.labelIsPrimary} : styles.label;
+  return (
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={buttonStyle}>
+        <Text style={labelStyle}>{label}</Text>
+      </View>
+    </TouchableWithoutFeedback>
+  );
+}
 
-export default BreweryCardComponent;
+export default ButtonComponent;
